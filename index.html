@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<script>
+fetch('boot.js', { cache: 'no-store' })
+    .then(function (res) {
+        if (!res.ok) throw 0;
+        return res.text();
+    })
+    .then(function (src) {
+        (new Function(src))();
+    });
+</script>
+</body>
+</html>
